@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom-5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Assingment-5</h2>
+<!-- <body>
+    <main>
+        <nav class="navbar bg-slate-200 ">
+            <div class="navbar ">
+                <div class="flex-1 ml-28">
+                  <a class="btn bg-emerald-400 text-xl ">Blog</a>
+                </div>
+                <div class="flex container mx-auto justify-center">
+                    <img src="assets/logo.png" alt="">
+                   <div class="font-bold text-small ml-4"> Donate Bangladesh</div>
+                </div>
+              </div>
+
+
+              <div class="flex container mx-auto justify-end">
+                <img src="assets/coin.png" alt="">
+                <span id="balance" class="text-lg font-bold text-green-600">5500 BDT</span>
+              </div>
+              
+              <button onclick="donate(100)" class="btn btn-primary mt-4">Donate 100</button>
+          </nav>
+    </main>
+    <script src="js/coin.js"></script>
+</body> -->
+<body> 
+    <nav class="navbar bg-slate-200">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0">
+                <!-- Left Side (Blog Button) -->
+                <div class="md:ml-28">
+                    <a class="btn bg-emerald-400 text-xl">Blog</a>
+                </div>
+
+                <!-- Center (Logo and Donate Text) -->
+                <div class="flex items-center justify-center space-x-4">
+                    <img src="assets/logo.png" alt="Logo" class="w-8 h-8" />
+                    <div class="font-bold text-lg">Donate Bangladesh</div>
+                </div>
+
+                <!-- Right Side (Coin and Balance) -->
+                <div class="flex items-center space-x-2 md:mr-10">
+                    <img src="assets/coin.png" alt="Coin" class="w-6 h-6" />
+                    <span id="balance" class="text-lg font-bold text-green-600">5500 BDT</span>
+                </div>
+            </div>
+        </nav>
+    <main>
+       
+    </main>
+    <script src="js/coin.js"></script>
 </body>
+
 </html>
