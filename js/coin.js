@@ -1,30 +1,35 @@
-function donate(amount) {
-    const balanceElement = document.getElementById('balance');
-    let currentBalance = parseInt(balanceElement.textContent);
+let balance = 5500; // Initial balance
 
-    // New balance after donation
-    currentBalance -= amount;
+function customDonate(inputId, totalId) {
+    const donationAmount = parseInt(document.getElementById(inputId).value);
+    const totalDonatedElem = document.getElementById(totalId);
 
-    // Update the displayed balance
-    balanceElement.textContent = currentBalance;
+    if (isNaN(donationAmount) || donationAmount <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+    }
 
-    // Optional: Change color based on remaining balance
-    balanceElement.className = currentBalance > 0 ? 'text-lg font-bold text-green-600' : 'text-lg font-bold text-red-600';
-  }
+    if (donationAmount > balance) {
+        alert("Insufficient balance!");
+        return; // Prevent donation if insufficient balance
+    }
 
-  // btn
+    // Deduct the donation amount from the balance
+    balance -= donationAmount;
 
-  const donationBtn = document.getElementById("donation-btn");
-const historyBtn = document.getElementById("history-btn");
+    const currentTotal = parseInt(totalDonatedElem.innerText) || 0;
+    const newTotal = currentTotal + donationAmount;
 
-// Function to handle button click and toggle active class
-function toggleActive(button) {
-  donationBtn.classList.remove("active");
-  historyBtn.classList.remove("active");
+    totalDonatedElem.innerText = `${newTotal} BDT`; // Update total donated
+    document.getElementById(inputId).value = ""; // Clear input field
 
-  button.classList.add("active");
+    // Update remaining balance in the navbar
+    document.getElementById("balance").innerText = `${balance} BDT`;
+
+    // Show success modal
+    document.getElementById("successModal").classList.remove("hidden");
 }
 
-// Adding event listeners
-donationBtn.addEventListener("click", () => toggleActive(donationBtn));
-historyBtn.addEventListener("click", () => toggleActive(historyBtn));
+function closeModal() {
+    document.getElementById("successModal").classList.add("hidden");
+}
