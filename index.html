@@ -7,6 +7,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<style>.btn {
+    background-color: #f0f0f0; /* Default color */
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn.active {
+    background-color: #B4F461; /* Active color */
+    color: black;
+  }
+  </style>
 </head>
 <!-- <body>
     <main>
@@ -53,8 +66,24 @@
                 </div>
             </div>
         </nav>
-    <main>
-       
+    <main  class="hero bg-base-200 mt-8">
+        <!-- <div class="hero bg-base-200 mt-8">
+            <div class="hero-content text-center">
+              <div class="max-w-md">
+                <button class="btn btn-accen bg-green-400 rounded-lg w-24 h-8  ">Donation</button>  <button>History</button>
+               
+          </div> --> 
+          <div class=" text-center flex items-center flex items-center justify-center space-x-4 ">
+            <button id="donation-btn" class="btn text-black">Donation</button>
+            <button id="history-btn" class="btn text-black">History</button>
+
+          </div>
+
+
+          <!-- first donation banner -->
+
+          
+
     </main>
     <script src="js/coin.js"></script>
 </body>
