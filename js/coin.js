@@ -1,3 +1,40 @@
+function showDonation() {
+    document.getElementById('donation-btn').classList.add('active');
+    document.getElementById('history-btn').classList.remove('active');
+    document.getElementById('donation-container').classList.remove('hidden');
+    document.getElementById('history-container').classList.add('hidden');
+}
+
+function showHistory() {
+    document.getElementById('history-btn').classList.add('active');
+    document.getElementById('donation-btn').classList.remove('active');
+    document.getElementById('history-container').classList.remove('hidden');
+    document.getElementById('donation-container').classList.add('hidden');
+}
+
+// 
+
+function toggleActive(button) {
+    document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+}
+
+// 
+
+function showDonation() {
+    document.getElementById('donation-content').style.display = 'block';
+    document.getElementById('history-content').style.display = 'none';
+    document.getElementById('donation-btn').classList.add('active');
+    document.getElementById('history-btn').classList.remove('active');
+}
+
+function showHistory() {
+    document.getElementById('donation-content').style.display = 'none';
+    document.getElementById('history-content').style.display = 'none';//cng none blk
+    document.getElementById('history-btn').classList.add('active');
+    document.getElementById('donation-btn').classList.remove('active');
+}
+
 let balance = 5500; // Initial balance
 
 function customDonate(inputId, totalId) {
@@ -33,3 +70,29 @@ function customDonate(inputId, totalId) {
 function closeModal() {
     document.getElementById("successModal").classList.add("hidden");
 }
+
+
+
+
+function showDonation() {
+    // Show donation content and hide history content
+    document.getElementById("donation-content").style.display = "block";
+    document.getElementById("history-content").classList.add("hidden");
+}
+
+function toggleHistory() {
+    // Toggle visibility of the history section
+    const historyContent = document.getElementById("history-content");
+    const donationContent = document.getElementById("donation-content");
+
+    donationContent.style.display = "none"; // Hide donation content
+    historyContent.classList.toggle("hidden"); // Toggle history content visibility
+}
+
+
+
+
+
+
+
+
